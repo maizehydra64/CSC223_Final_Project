@@ -64,15 +64,24 @@ public class Project_Main {
 						palGen.print();
 						break;
 					case 4:
-						continue;
+						PrimeGenerator primeGen = new PrimeGenerator(num_gen);
+						primeGen.flip();
+						primeGen.print();
+						break;
 					case 5:
 						Gapful gapful = new Gapful(num_gen);
 						gapful.print();
 						break;
 					case 6:
-						continue;
+						JumpingGenerator jumpGen = new JumpingGenerator(num_gen);
+						jumpGen.flip();
+						jumpGen.print();
+						break;
 					case 7:
-						continue;
+						PerfectSquareGenerator perfectSquareGen = new PerfectSquareGenerator(num_gen);
+						perfectSquareGen.flip();
+						perfectSquareGen.print();
+						break;
 					case 8:
 						HarmonicGen harmGen = new HarmonicGen(num_gen);
 						harmGen.print();
