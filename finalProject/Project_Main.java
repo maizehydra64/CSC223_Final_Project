@@ -58,7 +58,9 @@ public class Project_Main {
 						buzzGen.flip();
 						buzzGen.print();
 					case 3:
-						continue;
+						PalindromeGenerator palGen = new PalindromeGenerator(num_gen);
+						palGen.flip();
+						palGen.print();
 					case 4:
 						continue;
 					case 5:
