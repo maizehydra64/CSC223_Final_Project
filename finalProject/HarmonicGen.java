@@ -5,7 +5,7 @@ import java.util.Stack;
 public class HarmonicGen {
 	
 	// stack of shorts
-	Stack<Integer> numbers;
+	Stack<Long> numbers;
 		
 	// constructor
 	public HarmonicGen(int length) {
@@ -31,7 +31,7 @@ public class HarmonicGen {
 			// checks if sum and prod are equal
 			if(sum==prod) {
 				// pushs iter to numbers
-				numbers.push(iter);
+				numbers.push((long)iter);
 			}
 			// iterates iter
 			iter++;
