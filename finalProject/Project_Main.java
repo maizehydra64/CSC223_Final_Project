@@ -54,7 +54,9 @@ public class Project_Main {
 						evenGen.flip();
 						evenGen.print();
 					case 2:
-						continue;
+						BuzzGenerator buzzGen = new BuzzGenerator(num_gen);
+						buzzGen.flip();
+						buzzGen.print();
 					case 3:
 						continue;
 					case 4:
