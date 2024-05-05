@@ -74,7 +74,9 @@ public class Project_Main {
 					case 7:
 						continue;
 					case 8:
-						continue;
+						HarmonicGen harmGen = new HarmonicGen(num_gen);
+						harmGen.print();
+						break;
 					case 9:
 						continue;
 				}
