@@ -51,20 +51,24 @@ public class Project_Main {
 				switch (choice) {
 					case 1:
 						EvenGenerator evenGen = new EvenGenerator(num_gen);
-						evenGen.flip();
 						evenGen.print();
+						break;
 					case 2:
 						BuzzGenerator buzzGen = new BuzzGenerator(num_gen);
 						buzzGen.flip();
 						buzzGen.print();
+						break;
 					case 3:
 						PalindromeGenerator palGen = new PalindromeGenerator(num_gen);
 						palGen.flip();
 						palGen.print();
+						break;
 					case 4:
 						continue;
 					case 5:
-						continue;
+						Gapful gapful = new Gapful(num_gen);
+						gapful.print();
+						break;
 					case 6:
 						continue;
 					case 7:
