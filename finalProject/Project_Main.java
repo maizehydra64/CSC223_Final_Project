@@ -55,17 +55,14 @@ public class Project_Main {
 						break;
 					case 2:
 						BuzzGenerator buzzGen = new BuzzGenerator(num_gen);
-						buzzGen.flip();
 						buzzGen.print();
 						break;
 					case 3:
 						PalindromeGenerator palGen = new PalindromeGenerator(num_gen);
-						palGen.flip();
 						palGen.print();
 						break;
 					case 4:
 						PrimeGenerator primeGen = new PrimeGenerator(num_gen);
-						primeGen.flip();
 						primeGen.print();
 						break;
 					case 5:
@@ -78,7 +75,6 @@ public class Project_Main {
 						break;
 					case 7:
 						PerfectSquareGenerator perfectSquareGen = new PerfectSquareGenerator(num_gen);
-						perfectSquareGen.flip();
 						perfectSquareGen.print();
 						break;
 					case 8:

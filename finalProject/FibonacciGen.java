@@ -17,9 +17,13 @@ public class FibonacciGen {
 	public void generate(int len) {
 		for(int i = 0;i<len;i++) {
 			if(i<=1) {
+				// pushes the first 2 ones to the stack
 				numbers.push(1.0);
 			}
 			else{
+				// removes the top number to look below it
+				// then returns it and adds those two together
+				// and pushes the sum to the stack
 				double top = numbers.pop();
 				double temp = numbers.peek();
 				numbers.push(top);
