@@ -74,7 +74,6 @@ public class Project_Main {
 						break;
 					case 6:
 						JumpingGenerator jumpGen = new JumpingGenerator(num_gen);
-						jumpGen.flip();
 						jumpGen.print();
 						break;
 					case 7:
@@ -113,7 +112,7 @@ public class Project_Main {
 		System.out.println("6. Jumping Numbers");
 		System.out.println("7. Perfect Square Numbers");
 		System.out.println("8. Harmonic Numbers");
-		System.out.println("9. Placeholder");
+		System.out.println("9. Fibonacci Sequence");
 		System.out.println("0. Exit");
 		System.out.println("Please enter the number of your choice: ");
 	}

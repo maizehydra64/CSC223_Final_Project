@@ -1,19 +1,22 @@
 package finalProject;
 
+import java.util.Stack;
+
 public class JumpingGenerator {
-	private int[] numbers;
+	Stack<Integer> numbers;
 	public JumpingGenerator(int length) {
-		numbers = new int[length];
+		numbers = new Stack<>();
 		generate(length);
 	}
 	
 	public void generate(int length) {
-        numbers = new int[length];
+        numbers = new Stack<>();
         int found = 0;
         int current = 10; // Start from 10 to ensure 2-digit numbers
         while (found < length) {
             if (isJumping(current)) {
-                numbers[found++] = current;
+                 numbers.push(current);
+                 found++;
             }
             current++;
         }
@@ -30,22 +33,14 @@ public class JumpingGenerator {
         }
         return true;
     }
-	
-	public void flip() {
-        int len = numbers.length;
-        int[] tempList = new int[len];
-        for (int i = 0; i < len; i++) {
-            tempList[i] = numbers[len - (i + 1)];
-        }
-        numbers = tempList;
-    }
 
     public void print() {
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.print(numbers[i]);
-            if (i != numbers.length - 1) {
-                System.out.print(", ");
-            }
-        }
+    	while(!numbers.isEmpty()) {
+			System.out.print(numbers.pop());
+			if(!numbers.isEmpty()) {
+				System.out.print(", ");
+			}
+		}
+		System.out.println();
     }
 }
