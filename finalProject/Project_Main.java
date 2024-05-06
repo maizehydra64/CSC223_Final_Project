@@ -29,7 +29,7 @@ public class Project_Main {
 				// get the user's choice
 				choice = scan.nextInt();
 			// catches if the user inputs anything other than an integer
-			}catch (java.util.InputMismatchException e){	
+			}catch (java.util.NoSuchElementException e){	
 				scan.next();
 				choice = -1;
 			}
@@ -41,7 +41,7 @@ public class Project_Main {
 					System.out.println("How many numbers would you like to generate (100 maximum):");
 					try {
 						num_gen = scan.nextInt();
-					}catch (java.util.InputMismatchException e){	
+					}catch (java.util.NoSuchElementException e){	
 						scan.next();
 					}
 					if(num_gen>100|num_gen<1) {
