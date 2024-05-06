@@ -1,24 +1,28 @@
 package finalProject;
+import java.util.Stack;
 
 public class PalindromeGenerator {
-	short[] numbers;
+	//generic stack
+	Stack<Short> numbers;
 
+	// constructor
 	public PalindromeGenerator(int length) {
-		numbers = new short[length];
-		generate();
+		numbers = new Stack<>();
+		generate(length);
 	}
-
-	public void generate() {
+	// generates numbers for the stack
+	public void generate(int length) {
 		short current = 11;
 		int found = 0;
-		while (found < numbers.length) {
+		while (found < length) {
 			if (isPalindrome(current)) {
-				numbers[found++] = current;
+				numbers.push(current);
+				found++;
 			}
 			current++;
 		}
 	}
-
+	//makes a more specific loop to find exactly what we are looking for
 	private boolean isPalindrome(short num) {
 		String str = Short.toString(num);
 		int i = 0;
@@ -33,23 +37,14 @@ public class PalindromeGenerator {
 		return true;
 	}
 
-	// flips the list
-	public void flip() {
-		int len = numbers.length;
-		short[] tempList = new short[len];
-		for(int i = 0;i<len;i++) {
-			tempList[i] = numbers[len-(i+1)];
-		}
-		numbers = tempList;
-	}
-
 	// prints the list
 	public void print() {
-		for(int i = 0; i < numbers.length;i++) {
-			System.out.print(numbers[i]);
-			if(i!=numbers.length-1) {
+		while(!numbers.isEmpty()) {
+			System.out.print(numbers.pop());
+			if(!numbers.isEmpty()) {
 				System.out.print(", ");
 			}
 		}
+		System.out.println();
 	}
 }
