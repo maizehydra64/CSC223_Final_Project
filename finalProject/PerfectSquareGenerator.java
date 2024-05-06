@@ -1,37 +1,36 @@
 package finalProject;
 
+import java.util.Stack;
+
 public class PerfectSquareGenerator {
+	//generic stack
+	Stack<Long> numbers;
 
-	private long[] numbers;
-
-	public PerfectSquareGenerator(int length) {
-		numbers = new long[length];
+	// constructor
+	public PerfectSquareGenerator(long length) {
+		numbers = new Stack<>();
 		generate(length);
 	}
+
+	// generates numbers for the stack
 	public void generate(long length) {
 		System.out.println("Perfect Square Numbers:");
 		int number = 1;
 		for (int i = 0; i < length; i++) {
-			System.out.print(number * number + " ");
+			long found = (number * number);
+			numbers.push(found);
 			number++;
 		}
 	}
 
-	public void flip() {
-		int len = numbers.length;
-		long[] tempList = new long[len];
-		for (int i = 0; i < len; i++) {
-			tempList[i] = numbers[len - (i + 1)];
-		}
-		numbers = tempList;
-	}
-
+	// prints the list
 	public void print() {
-		for (int i = 0; i < numbers.length; i++) {
-			System.out.print(numbers[i]);
-			if (i != numbers.length - 1) {
+		while(!numbers.isEmpty()) {
+			System.out.print(numbers.pop());
+			if(!numbers.isEmpty()) {
 				System.out.print(", ");
 			}
 		}
+		System.out.println();
 	}
 }
