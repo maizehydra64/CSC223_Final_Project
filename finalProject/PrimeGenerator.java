@@ -1,4 +1,4 @@
-package FinalStuff;
+package finalProject;
 
 import java.util.Stack;
 
