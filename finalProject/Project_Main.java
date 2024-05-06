@@ -87,7 +87,9 @@ public class Project_Main {
 						harmGen.print();
 						break;
 					case 9:
-						continue;
+						FibonacciGen fibGen = new FibonacciGen(num_gen);
+						fibGen.print();
+						break;
 				}
 			}else if(choice==0) {
 				continue;

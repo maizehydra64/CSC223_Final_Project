@@ -1,4 +1,4 @@
-package FinalStuff;
+package finalProject;
 
 public class PrimeGenerator {
 	private int[] numbers;
