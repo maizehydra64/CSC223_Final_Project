@@ -1,52 +1,49 @@
-package finalProject;
+package FinalStuff;
+
+import java.util.Stack;
 
 public class PrimeGenerator {
-	private int[] numbers;
-	
+	//generic stack
+	Stack<Integer> numbers;
+
+	// constructor
 	public PrimeGenerator(int length) {
-		numbers = new int[length];
+		numbers = new Stack<>();
 		generate(length);
 	}
-	
+	// generates numbers for the stack
 	public void generate(int length) {
-        numbers = new int[length];
-        int found = 0;
-        int current = 2;
-        while (found < length) {
-            if (isPrime(current)) {
-                numbers[found++] = current;
-            }
-            current++;
-        }
-    }
-	
+		int found = 0;
+		int current = 2;
+		while (found < length) {
+			if (isPrime(current)) {
+				numbers.push(current);
+				found++;
+			}
+			current++;
+		}
+	}
+	//makes a more specific loop to find exactly what we are looking for
 	private boolean isPrime(int num) {
-        if (num <= 1) {
-            return false;
-        }
-        for (int i = 2; i <= Math.sqrt(num); i++) {
-            if (num % i == 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-	
-	public void flip() {
-        int len = numbers.length;
-        int[] tempList = new int[len];
-        for (int i = 0; i < len; i++) {
-            tempList[i] = numbers[len - (i + 1)];
-        }
-        numbers = tempList;
-    }
+		if (num <= 1) {
+			return false;
+		}
+		for (int i = 2; i <= Math.sqrt(num); i++) {
+			if (num % i == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
 
-    public void print() {
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.print(numbers[i]);
-            if (i != numbers.length - 1) {
-                System.out.print(", ");
-            }
-        }
-    }
+	// prints the list
+	public void print() {
+		while(!numbers.isEmpty()) {
+			System.out.print(numbers.pop());
+			if(!numbers.isEmpty()) {
+				System.out.print(", ");
+			}
+		}
+		System.out.println();
+	}
 }
